@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер систем счисления</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🔢 Конвертер систем счисления</h1>
+            <p>Перевод чисел между двоичной, восьмеричной, десятичной и шестнадцатеричной системами</p>
+        </header>
+
+        <main>
+            <div class="converter-card">
+                <div class="input-group">
+                    <label for="numberInput">Введите число:</label>
+                    <input type="text" id="numberInput" placeholder="Например: 255" autocomplete="off">
+                </div>
+
+                <div class="select-group">
+                    <div class="select-wrapper">
+                        <label for="fromBase">Из системы:</label>
+                        <select id="fromBase">
+                            <option value="2">Двоичная (2)</option>
+                            <option value="8">Восьмеричная (8)</option>
+                            <option value="10" selected>Десятичная (10)</option>
+                            <option value="16">Шестнадцатеричная (16)</option>
+                        </select>
+                    </div>
+
+                    <div class="swap-btn" id="swapBtn" title="Поменять местами">
+                        ⇄
+                    </div>
+
+                    <div class="select-wrapper">
+                        <label for="toBase">В систему:</label>
+                        <select id="toBase">
+                            <option value="2" selected>Двоичная (2)</option>
+                            <option value="8">Восьмеричная (8)</option>
+                            <option value="10">Десятичная (10)</option>
+                            <option value="16">Шестнадцатеричная (16)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="convert-btn" id="convertBtn">Конвертировать</button>
+
+                <div class="result-box" id="resultBox">
+                    <span class="result-label">Результат:</span>
+                    <span class="result-value" id="resultValue">—</span>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <!-- Таблица всех конвертаций -->
+            <div class="all-results-card" id="allResultsCard">
+                <h2>Все представления числа</h2>
+                <div class="results-grid" id="resultsGrid">
+                    <div class="result-item">
+                        <span class="result-item-label">Двоичная (2):</span>
+                        <span class="result-item-value" id="resBin">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-item-label">Восьмеричная (8):</span>
+                        <span class="result-item-value" id="resOct">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-item-label">Десятичная (10):</span>
+                        <span class="result-item-value" id="resDec">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-item-label">Шестнадцатеричная (16):</span>
+                        <span class="result-item-value" id="resHex">—</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>project_vlad &copy; 2026</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

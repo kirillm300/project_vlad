@@ -1,0 +1,291 @@
+/* ===== Сброс и базовые стили ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* ===== Шапка ===== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #a0a0c0;
+}
+
+/* ===== Карточка конвертера ===== */
+.converter-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Поле ввода ===== */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #c0c0e0;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #7c6ff7;
+    box-shadow: 0 0 0 3px rgba(124, 111, 247, 0.25);
+}
+
+.input-group input::placeholder {
+    color: #707090;
+}
+
+/* ===== Группа селектов ===== */
+.select-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.select-wrapper {
+    flex: 1;
+}
+
+.select-wrapper label {
+    display: block;
+    font-size: 0.9rem;
+    color: #c0c0e0;
+    margin-bottom: 8px;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a0a0c0' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.select-wrapper select:focus {
+    border-color: #7c6ff7;
+    box-shadow: 0 0 0 3px rgba(124, 111, 247, 0.25);
+}
+
+.select-wrapper select option {
+    background: #1e1b3a;
+    color: #fff;
+}
+
+/* ===== Кнопка swap ===== */
+.swap-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px 14px;
+    background: rgba(124, 111, 247, 0.2);
+    border: 1px solid rgba(124, 111, 247, 0.4);
+    border-radius: 10px;
+    color: #b0a8ff;
+    transition: background 0.3s, transform 0.3s;
+    user-select: none;
+    margin-bottom: 2px;
+}
+
+.swap-btn:hover {
+    background: rgba(124, 111, 247, 0.35);
+    transform: rotate(180deg);
+}
+
+/* ===== Кнопка конвертации ===== */
+.convert-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #7c6ff7, #5a4fcf);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.convert-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 111, 247, 0.4);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+/* ===== Блок результата ===== */
+.result-box {
+    background: rgba(124, 111, 247, 0.1);
+    border: 1px solid rgba(124, 111, 247, 0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.result-label {
+    font-size: 0.95rem;
+    color: #a0a0c0;
+}
+
+.result-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4ccff;
+    word-break: break-all;
+}
+
+/* ===== Сообщение об ошибке ===== */
+.error-message {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+    min-height: 20px;
+}
+
+/* ===== Карточка всех результатов ===== */
+.all-results-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.all-results-card h2 {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.result-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.result-item-label {
+    font-size: 0.8rem;
+    color: #8080a0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.result-item-value {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #d4ccff;
+    word-break: break-all;
+}
+
+/* ===== Подвал ===== */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #606080;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .converter-card,
+    .all-results-card {
+        padding: 20px;
+    }
+
+    .select-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .swap-btn {
+        align-self: center;
+        transform: rotate(90deg);
+    }
+
+    .swap-btn:hover {
+        transform: rotate(270deg);
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
